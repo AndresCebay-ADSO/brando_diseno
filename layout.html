@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gestión de Restaurante</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/palettes.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900">
+    <div class="flex h-screen">
+        <!-- Menú lateral -->
+        <aside class="w-64 bg-primary-800 text-white flex flex-col transition-all duration-300 ease-in-out">
+            <!-- Logo y Título -->
+            <div class="p-4 flex items-center gap-3 border-b border-primary-700">
+                <div class="bg-white p-2 rounded-lg">
+                    <i class="fas fa-utensils text-primary-600 text-2xl"></i>
+                </div>
+                <h1 class="text-xl font-bold">Restaurante<br><span class="text-sm font-normal">Sistema de Gestión</span></h1>
+            </div>
+            
+            <!-- Menú de Navegación -->
+            <nav class="flex-1 overflow-y-auto py-4">
+                <div class="px-4 mb-4">
+                    <p class="text-xs uppercase text-primary-300 font-semibold mb-2">Principal</p>
+                    <ul class="space-y-1">
+                        <li>
+                            <a href="#dashboard" class="flex items-center px-4 py-2 rounded-lg bg-primary-700 text-white hover:bg-primary-600 transition-colors">
+                                <i class="fas fa-tachometer-alt w-5 mr-3 text-center"></i>
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="px-4 mb-4">
+                    <p class="text-xs uppercase text-primary-300 font-semibold mb-2">Operaciones</p>
+                    <ul class="space-y-1">
+                        <li>
+                            <a href="#ventas" class="flex items-center px-4 py-2 rounded-lg text-white hover:bg-primary-700 transition-colors">
+                                <i class="fas fa-cash-register w-5 mr-3 text-center"></i>
+                                <span>Punto de Venta</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#mesas" class="flex items-center px-4 py-2 rounded-lg text-white hover:bg-primary-700 transition-colors">
+                                <i class="fas fa-chair w-5 mr-3 text-center"></i>
+                                <span>Mesas</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#domicilios" class="flex items-center px-4 py-2 rounded-lg text-white hover:bg-primary-700 transition-colors">
+                                <i class="fas fa-motorcycle w-5 mr-3 text-center"></i>
+                                <span>Domicilios</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="px-4 mb-4">
+                    <p class="text-xs uppercase text-primary-300 font-semibold mb-2">Gestión</p>
+                    <ul class="space-y-1">
+                        <li>
+                            <a href="#inventario" class="flex items-center px-4 py-2 rounded-lg text-white hover:bg-primary-700 transition-colors">
+                                <i class="fas fa-boxes w-5 mr-3 text-center"></i>
+                                <span>Inventario</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#finanzas" class="flex items-center px-4 py-2 rounded-lg text-white hover:bg-primary-700 transition-colors">
+                                <i class="fas fa-chart-line w-5 mr-3 text-center"></i>
+                                <span>Finanzas</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#nomina" class="flex items-center px-4 py-2 rounded-lg text-white hover:bg-primary-700 transition-colors">
+                                <i class="fas fa-users w-5 mr-3 text-center"></i>
+                                <span>Nómina</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="px-4 mb-4">
+                    <p class="text-xs uppercase text-primary-300 font-semibold mb-2">Reportes</p>
+                    <ul class="space-y-1">
+                        <li>
+                            <a href="#reportes" class="flex items-center px-4 py-2 rounded-lg text-white hover:bg-primary-700 transition-colors">
+                                <i class="fas fa-file-alt w-5 mr-3 text-center"></i>
+                                <span>Reportes</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#estadisticas" class="flex items-center px-4 py-2 rounded-lg text-white hover:bg-primary-700 transition-colors">
+                                <i class="fas fa-chart-pie w-5 mr-3 text-center"></i>
+                                <span>Estadísticas</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="px-4">
+                    <p class="text-xs uppercase text-primary-300 font-semibold mb-2">Configuración</p>
+                    <ul class="space-y-1">
+                        <li>
+                            <a href="#administracion" class="flex items-center px-4 py-2 rounded-lg text-white hover:bg-primary-700 transition-colors">
+                                <i class="fas fa-cog w-5 mr-3 text-center"></i>
+                                <span>Administración</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#extras" class="flex items-center px-4 py-2 rounded-lg text-white hover:bg-primary-700 transition-colors">
+                                <i class="fas fa-star w-5 mr-3 text-center"></i>
+                                <span>Extras</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Pie de página -->
+            <div class="p-4 border-t border-primary-700 space-y-4">
+                <!-- Usuario -->
+                <div class="flex items-center gap-2 mb-4">
+                    <img src="https://ui-avatars.com/api/?name=Usuario" alt="Usuario" class="w-8 h-8 rounded-full">
+                    <div>
+                        <p class="text-sm font-medium text-white">Usuario</p>
+                        <p class="text-xs text-primary-200">Administrador</p>
+                    </div>
+                </div>
+                
+                <!-- Selector de Tema -->
+                <div>
+                    <label for="theme-selector" class="block text-xs font-medium text-primary-200 mb-1">Tema</label>
+                    <select id="theme-selector" class="w-full p-2 text-sm bg-primary-700 border border-primary-600 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-400 text-white">
+                        <option value="light">Claro</option>
+                        <option value="dark">Oscuro</option>
+                        <option value="system">Sistema</option>
+                    </select>
+                </div>
+                
+                <!-- Selector de Paleta -->
+                <div>
+                    <label for="palette-selector" class="block text-xs font-medium text-primary-200 mb-1">Paleta de Colores</label>
+                    <select id="palette-selector" class="w-full p-2 text-sm bg-primary-700 border border-primary-600 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-400 text-white">
+                        <option value="classic-pos">Classic POS (Azul/Verde)</option>
+                        <option value="glass-minimal">Glass Minimal (Violeta/Ámbar)</option>
+                        <option value="dark-pro">Dark Pro (Esmeralda/Rosa)</option>
+                    </select>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Área principal -->
+        <div class="flex-1 flex flex-col overflow-hidden">
+            <!-- Barra superior -->
+            <header class="bg-white dark:bg-gray-800 shadow-sm z-10">
+                <div class="flex items-center justify-between p-4">
+                    <div class="flex items-center">
+                        <button id="sidebar-toggle" class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 mr-4">
+                            <i class="fas fa-bars text-xl"></i>
+                        </button>
+                        <h2 class="text-lg font-semibold text-gray-800 dark:text-white" id="page-title">Dashboard</h2>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <button class="p-2 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 relative">
+                            <i class="fas fa-bell text-xl"></i>
+                            <span class="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
+                        </button>
+                        <button class="p-2 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">
+                            <i class="fas fa-question-circle text-xl"></i>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Contenido -->
+            <main class="flex-1 overflow-y-auto p-6 bg-gray-50 dark:bg-gray-900" id="content">
+                <!-- El contenido de cada página se cargará aquí -->
+                <div class="max-w-7xl mx-auto">
+                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6">
+                        <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-4">Bienvenido al Sistema de Gestión</h2>
+                        <p class="text-gray-600 dark:text-gray-300">Selecciona un módulo en el menú lateral para comenzar.</p>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="router.js"></script>
+    <script src="theme.js"></script>
+</body>
+</html>

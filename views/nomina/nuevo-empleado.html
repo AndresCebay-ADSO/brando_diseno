@@ -1,0 +1,388 @@
+<!-- Encabezado de la página -->
+<div class="flex items-center justify-between mb-6">
+    <div>
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Nuevo Empleado</h2>
+        <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">Complete el formulario para registrar un nuevo empleado</p>
+    </div>
+    <a href="#/nomina" class="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700">
+        <i class="fas fa-arrow-left mr-2"></i>Volver a la lista
+    </a>
+</div>
+
+<!-- Formulario de Registro -->
+<div class="bg-white dark:bg-gray-800 shadow overflow-hidden sm:rounded-lg">
+    <div class="px-4 py-5 sm:p-6">
+        <form id="employeeForm">
+            <!-- Sección de Información Personal -->
+            <div class="border-b border-gray-200 dark:border-gray-700 pb-5 mb-6">
+                <h3 class="text-lg font-medium leading-6 text-gray-900 dark:text-white">Información Personal</h3>
+                <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">Datos personales del empleado</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <!-- Nombre -->
+                <div>
+                    <label for="firstName" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Nombres *</label>
+                    <input type="text" id="firstName" name="firstName" required
+                        class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white">
+                </div>
+                
+                <!-- Apellidos -->
+                <div>
+                    <label for="lastName" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Apellidos *</label>
+                    <input type="text" id="lastName" name="lastName" required
+                        class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white">
+                </div>
+                
+                <!-- Fecha de Nacimiento -->
+                <div>
+                    <label for="birthDate" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Fecha de Nacimiento *</label>
+                    <input type="date" id="birthDate" name="birthDate" required
+                        class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white">
+                </div>
+                
+                <!-- Género -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Género *</label>
+                    <div class="mt-1 space-y-2">
+                        <div class="flex items-center">
+                            <input id="male" name="gender" type="radio" value="Masculino" required
+                                class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 dark:border-gray-600 dark:bg-gray-700">
+                            <label for="male" class="ml-2 block text-sm text-gray-700 dark:text-gray-300">Masculino</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="female" name="gender" type="radio" value="Femenino"
+                                class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 dark:border-gray-600 dark:bg-gray-700">
+                            <label for="female" class="ml-2 block text-sm text-gray-700 dark:text-gray-300">Femenino</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="other" name="gender" type="radio" value="Otro"
+                                class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 dark:border-gray-600 dark:bg-gray-700">
+                            <label for="other" class="ml-2 block text-sm text-gray-700 dark:text-gray-300">Otro</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Identificación -->
+                <div>
+                    <label for="idNumber" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Número de Identificación *</label>
+                    <input type="text" id="idNumber" name="idNumber" required
+                        class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white">
+                </div>
+                
+                <!-- Teléfono -->
+                <div>
+                    <label for="phone" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Teléfono *</label>
+                    <input type="tel" id="phone" name="phone" required
+                        class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white">
+                </div>
+                
+                <!-- Correo Electrónico -->
+                <div class="md:col-span-2">
+                    <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Correo Electrónico *</label>
+                    <input type="email" id="email" name="email" required
+                        class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white">
+                </div>
+                
+                <!-- Dirección -->
+                <div class="md:col-span-2">
+                    <label for="address" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Dirección *</label>
+                    <textarea id="address" name="address" rows="2" required
+                        class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white"></textarea>
+                </div>
+            </div>
+            
+            <!-- Sección de Información Laboral -->
+            <div class="border-b border-gray-200 dark:border-gray-700 pb-5 mb-6 mt-10">
+                <h3 class="text-lg font-medium leading-6 text-gray-900 dark:text-white">Información Laboral</h3>
+                <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">Datos de la relación laboral</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <!-- Puesto -->
+                <div>
+                    <label for="position" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Puesto *</label>
+                    <select id="position" name="position" required
+                        class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white">
+                        <option value="">Seleccione un puesto</option>
+                        <option value="Chef Ejecutivo">Chef Ejecutivo</option>
+                        <option value="Sous Chef">Sous Chef</option>
+                        <option value="Cocinero">Cocinero</option>
+                        <option value="Mesero">Mesero</option>
+                        <option value="Bartender">Bartender</option>
+                        <option value="Anfitrión">Anfitrión</option>
+                        <option value="Cajero">Cajero</option>
+                        <option value="Gerente">Gerente</option>
+                        <option value="Ayudante de Cocina">Ayudante de Cocina</option>
+                        <option value="Lavavajillas">Lavavajillas</option>
+                    </select>
+                </div>
+                
+                <!-- Departamento -->
+                <div>
+                    <label for="department" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Departamento *</label>
+                    <select id="department" name="department" required
+                        class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white">
+                        <option value="">Seleccione un departamento</option>
+                        <option value="Cocina">Cocina</option>
+                        <option value="Servicio">Servicio</option>
+                        <option value="Bar">Bar</option>
+                        <option value="Administración">Administración</option>
+                        <option value="Limpieza">Limpieza</option>
+                    </select>
+                </div>
+                
+                <!-- Tipo de Contrato -->
+                <div>
+                    <label for="contractType" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Tipo de Contrato *</label>
+                    <select id="contractType" name="contractType" required
+                        class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white">
+                        <option value="">Seleccione un tipo</option>
+                        <option value="Tiempo Completo">Tiempo Completo</option>
+                        <option value="Medio Tiempo">Medio Tiempo</option>
+                        <option value="Temporal">Temporal</option>
+                        <option value="Por Horas">Por Horas</option>
+                        <option value="Prácticas">Prácticas</option>
+                    </select>
+                </div>
+                
+                <!-- Fecha de Ingreso -->
+                <div>
+                    <label for="hireDate" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Fecha de Ingreso *</label>
+                    <input type="date" id="hireDate" name="hireDate" required
+                        class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white">
+                </div>
+                
+                <!-- Salario -->
+                <div>
+                    <label for="salary" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Salario Mensual *</label>
+                    <div class="mt-1 relative rounded-md shadow-sm">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <span class="text-gray-500 dark:text-gray-400 sm:text-sm">$</span>
+                        </div>
+                        <input type="number" id="salary" name="salary" step="0.01" min="0" required
+                            class="pl-7 w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white"
+                            placeholder="0.00">
+                    </div>
+                </div>
+                
+                <!-- Jornada Laboral -->
+                <div>
+                    <label for="workSchedule" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Jornada Laboral *</label>
+                    <select id="workSchedule" name="workSchedule" required
+                        class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white">
+                        <option value="">Seleccione una jornada</option>
+                        <option value="Matutino (6:00 AM - 2:00 PM)">Matutino (6:00 AM - 2:00 PM)</option>
+                        <option value"Vespertino (2:00 PM - 10:00 PM)">Vespertino (2:00 PM - 10:00 PM)</option>
+                        <option value="Nocturno (10:00 PM - 6:00 AM)">Nocturno (10:00 PM - 6:00 AM)</option>
+                        <option value="Mixto">Mixto</option>
+                        <option value="Horario Administrativo">Horario Administrativo</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- Sección de Documentos -->
+            <div class="border-b border-gray-200 dark:border-gray-700 pb-5 mb-6 mt-10">
+                <h3 class="text-lg font-medium leading-6 text-gray-900 dark:text-white">Documentos</h3>
+                <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">Documentación del empleado</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <!-- Foto -->
+                <div class="md:col-span-2">
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Fotografía</label>
+                    <div class="mt-1 flex items-center">
+                        <span class="inline-block h-20 w-20 rounded-full overflow-hidden bg-gray-100 dark:bg-gray-700">
+                            <svg class="h-full w-full text-gray-300" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
+                            </svg>
+                        </span>
+                        <button type="button" class="ml-5 bg-white dark:bg-gray-700 py-2 px-3 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm text-sm leading-4 font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                            Cambiar
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Documentos -->
+                <div class="border border-dashed border-gray-300 dark:border-gray-600 rounded-md px-6 pt-5 pb-6 flex justify-center">
+                    <div class="space-y-1 text-center">
+                        <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
+                            <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <div class="flex text-sm text-gray-600 dark:text-gray-400">
+                            <label for="documents" class="relative cursor-pointer bg-white dark:bg-gray-800 rounded-md font-medium text-blue-600 dark:text-blue-400 hover:text-blue-500 dark:hover:text-blue-300 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-blue-500">
+                                <span>Subir documentos</span>
+                                <input id="documents" name="documents" type="file" multiple class="sr-only">
+                            </label>
+                            <p class="pl-1">o arrastrar aquí</p>
+                        </div>
+                        <p class="text-xs text-gray-500 dark:text-gray-400">
+                            PNG, JPG, PDF hasta 10MB
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Documentos Requeridos -->
+                <div class="space-y-2">
+                    <p class="text-sm font-medium text-gray-700 dark:text-gray-300">Documentos Requeridos:</p>
+                    <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Identificación Oficial</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="far fa-circle text-gray-300 mr-2"></i>
+                            <span>Comprobante de Domicilio</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="far fa-circle text-gray-300 mr-2"></i>
+                            <span>RFC</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="far fa-circle text-gray-300 mr-2"></i>
+                            <span>CURP</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="far fa-circle text-gray-300 mr-2"></i>
+                            <span>Comprobante de Estudios</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Sección de Cuentas Bancarias -->
+            <div class="border-b border-gray-200 dark:border-gray-700 pb-5 mb-6 mt-10">
+                <h3 class="text-lg font-medium leading-6 text-gray-900 dark:text-white">Datos Bancarios</h3>
+                <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">Información para depósito de nómina</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <!-- Banco -->
+                <div>
+                    <label for="bank" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Banco *</label>
+                    <select id="bank" name="bank" required
+                        class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white">
+                        <option value="">Seleccione un banco</option>
+                        <option value="BBVA">BBVA</option>
+                        <option value="Banorte">Banorte</option>
+                        <option value="Santander">Santander</option>
+                        <option value="HSBC">HSBC</option>
+                        <option value="Banamex">Banamex</option>
+                        <option value="Scotia">Scotiabank</option>
+                        <option value="Banregio">Banregio</option>
+                        <option value="Banbajio">BanBajío</option>
+                        <option value="Afirme">Afirme</option>
+                        <option value="Inbursa">Inbursa</option>
+                    </select>
+                </div>
+                
+                <!-- CLABE -->
+                <div>
+                    <label for="clabe" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">CLABE Interbancaria *</label>
+                    <input type="text" id="clabe" name="clabe" pattern="[0-9]{18}" maxlength="18" required
+                        class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white"
+                        placeholder="18 dígitos">
+                </div>
+                
+                <!-- Número de Cuenta -->
+                <div>
+                    <label for="accountNumber" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Número de Cuenta *</label>
+                    <input type="text" id="accountNumber" name="accountNumber" required
+                        class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white">
+                </div>
+                
+                <!-- Tarjeta de Nómina -->
+                <div>
+                    <label for="debitCard" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Número de Tarjeta (opcional)</label>
+                    <input type="text" id="debitCard" name="debitCard"
+                        class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white"
+                        placeholder="16 dígitos">
+                </div>
+            </div>
+            
+            <!-- Sección de Contactos de Emergencia -->
+            <div class="border-b border-gray-200 dark:border-gray-700 pb-5 mb-6 mt-10">
+                <h3 class="text-lg font-medium leading-6 text-gray-900 dark:text-white">Contactos de Emergencia</h3>
+                <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">Personas a contactar en caso de emergencia</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <!-- Contacto 1 -->
+                <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
+                    <h4 class="text-md font-medium text-gray-900 dark:text-white mb-3">Contacto de Emergencia 1</h4>
+                    <div class="space-y-3">
+                        <div>
+                            <label for="emergency1Name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Nombre Completo *</label>
+                            <input type="text" id="emergency1Name" name="emergency1Name" required
+                                class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white">
+                        </div>
+                        <div>
+                            <label for="emergency1Relationship" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Parentesco *</label>
+                            <input type="text" id="emergency1Relationship" name="emergency1Relationship" required
+                                class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white">
+                        </div>
+                        <div>
+                            <label for="emergency1Phone" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Teléfono *</label>
+                            <input type="tel" id="emergency1Phone" name="emergency1Phone" required
+                                class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contacto 2 -->
+                <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
+                    <h4 class="text-md font-medium text-gray-900 dark:text-white mb-3">Contacto de Emergencia 2</h4>
+                    <div class="space-y-3">
+                        <div>
+                            <label for="emergency2Name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Nombre Completo</label>
+                            <input type="text" id="emergency2Name" name="emergency2Name"
+                                class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white">
+                        </div>
+                        <div>
+                            <label for="emergency2Relationship" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Parentesco</label>
+                            <input type="text" id="emergency2Relationship" name="emergency2Relationship"
+                                class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white">
+                        </div>
+                        <div>
+                            <label for="emergency2Phone" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Teléfono</label>
+                            <input type="tel" id="emergency2Phone" name="emergency2Phone"
+                                class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sección de Notas -->
+            <div class="border-b border-gray-200 dark:border-gray-700 pb-5 mb-6 mt-10">
+                <h3 class="text-lg font-medium leading-6 text-gray-900 dark:text-white">Notas Adicionales</h3>
+                <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">Información adicional relevante</p>
+            </div>
+            
+            <div class="mb-6">
+                <label for="notes" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Observaciones</label>
+                <textarea id="notes" name="notes" rows="3"
+                    class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white"></textarea>
+            </div>
+            
+            <!-- Botones de Acción -->
+            <div class="flex justify-end space-x-3 pt-5 border-t border-gray-200 dark:border-gray-700">
+                <button type="button" class="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm text-sm font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                    Cancelar
+                </button>
+                <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                    <i class="fas fa-save mr-2"></i>Guardar Empleado
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Script para el formulario -->
+<script>
+document.getElementById('employeeForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    // Aquí iría la lógica para guardar el empleado
+    alert('Empleado registrado exitosamente');
+    window.location.href = '#/nomina';
+});
+</script>

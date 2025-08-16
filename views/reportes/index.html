@@ -1,0 +1,458 @@
+<!-- Encabezado de la página -->
+<div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
+    <div>
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Módulo de Reportes</h2>
+        <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">Genere y consulte reportes detallados del negocio</p>
+    </div>
+    <div class="mt-4 md:mt-0">
+        <button id="generateReport" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+            <i class="fas fa-file-export mr-2"></i>Exportar Reporte
+        </button>
+    </div>
+</div>
+
+<!-- Filtros -->
+<div class="bg-white dark:bg-gray-800 shadow rounded-lg p-4 mb-6">
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+        <div class="md:col-span-2">
+            <label for="reportType" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Tipo de Reporte *</label>
+            <select id="reportType" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white">
+                <option value="">Seleccione un reporte</option>
+                <optgroup label="Ventas">
+                    <option value="sales_daily">Ventas Diarias</option>
+                    <option value="sales_weekly">Ventas Semanales</option>
+                    <option value="sales_monthly">Ventas Mensuales</option>
+                    <option value="sales_by_product">Ventas por Producto</option>
+                    <option value="sales_by_category">Ventas por Categoría</option>
+                    <option value="sales_by_waiter">Ventas por Mesero</option>
+                </optgroup>
+                <optgroup label="Inventario">
+                    <option value="inventory_status">Estado del Inventario</option>
+                    <option value="inventory_movements">Movimientos de Inventario</option>
+                    <option value="inventory_low_stock">Productos por Agotarse</option>
+                    <option value="inventory_expiring">Productos por Vencer</option>
+                </optgroup>
+                <optgroup label="Finanzas">
+                    <option value="financial_income">Ingresos</option>
+                    <option value="financial_expenses">Gastos</option>
+                    <option value="financial_profit">Estado de Resultados</option>
+                    <option value="financial_cashflow">Flujo de Efectivo</option>
+                </optgroup>
+                <optgroup label="Personal">
+                    <option value="staff_attendance">Asistencia del Personal</option>
+                    <option value="staff_payroll">Nómina</option>
+                    <option value="staff_turnover">Rotación de Personal</option>
+                </optgroup>
+            </select>
+        </div>
+        <div>
+            <label for="startDate" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Fecha Inicio</label>
+            <input type="date" id="startDate" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white">
+        </div>
+        <div>
+            <label for="endDate" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Fecha Fin</label>
+            <input type="date" id="endDate" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white">
+        </div>
+        <div class="flex items-end">
+            <button id="applyFilters" class="w-full px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                Generar
+            </button>
+        </div>
+    </div>
+    
+    <!-- Filtros adicionales dinámicos -->
+    <div id="additionalFilters" class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700 hidden">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <!-- Filtros adicionales se cargarán dinámicamente según el tipo de reporte -->
+        </div>
+    </div>
+</div>
+
+<!-- Resumen de Reportes Frecuentes -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+    <!-- Reporte de Ventas del Día -->
+    <div class="bg-white dark:bg-gray-800 rounded-lg shadow overflow-hidden cursor-pointer hover:shadow-lg transition-shadow duration-300" data-report="sales_daily">
+        <div class="p-5">
+            <div class="flex items-center">
+                <div class="flex-shrink-0 bg-blue-500 rounded-md p-3">
+                    <i class="fas fa-shopping-cart text-white text-xl"></i>
+                </div>
+                <div class="ml-5 w-0 flex-1">
+                    <dl>
+                        <dt class="text-sm font-medium text-gray-500 dark:text-gray-400 truncate">Ventas de Hoy</dt>
+                        <dd class="flex items-baseline">
+                            <div class="text-2xl font-semibold text-gray-900 dark:text-white">$8,450.00</div>
+                            <div class="ml-2 flex items-baseline text-sm font-semibold text-green-600 dark:text-green-400">
+                                <i class="fas fa-arrow-up"></i>
+                                <span class="sr-only">Aumentó en</span>
+                                12%
+                            </div>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <div class="bg-gray-50 dark:bg-gray-700 px-5 py-3">
+            <div class="text-sm">
+                <a href="#" class="font-medium text-blue-600 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300">
+                    Ver reporte detallado
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Reporte de Productos más Vendidos -->
+    <div class="bg-white dark:bg-gray-800 rounded-lg shadow overflow-hidden cursor-pointer hover:shadow-lg transition-shadow duration-300" data-report="top_products">
+        <div class="p-5">
+            <div class="flex items-center">
+                <div class="flex-shrink-0 bg-green-500 rounded-md p-3">
+                    <i class="fas fa-star text-white text-xl"></i>
+                </div>
+                <div class="ml-5 w-0 flex-1">
+                    <dl>
+                        <dt class="text-sm font-medium text-gray-500 dark:text-gray-400 truncate">Productos Populares</dt>
+                        <dd class="flex items-baseline">
+                            <div class="text-2xl font-semibold text-gray-900 dark:text-white">5</div>
+                            <div class="ml-2 flex items-baseline text-sm font-semibold text-green-600 dark:text-green-400">
+                                <i class="fas fa-arrow-up"></i>
+                                3 nuevos
+                            </div>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <div class="bg-gray-50 dark:bg-gray-700 px-5 py-3">
+            <div class="text-sm">
+                <a href="#" class="font-medium text-blue-600 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300">
+                    Ver productos destacados
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Reporte de Inventario Bajo -->
+    <div class="bg-white dark:bg-gray-800 rounded-lg shadow overflow-hidden cursor-pointer hover:shadow-lg transition-shadow duration-300" data-report="inventory_low">
+        <div class="p-5">
+            <div class="flex items-center">
+                <div class="flex-shrink-0 bg-yellow-500 rounded-md p-3">
+                    <i class="fas fa-exclamation-triangle text-white text-xl"></i>
+                </div>
+                <div class="ml-5 w-0 flex-1">
+                    <dl>
+                        <dt class="text-sm font-medium text-gray-500 dark:text-gray-400 truncate">Productos por Agotarse</dt>
+                        <dd class="flex items-baseline">
+                            <div class="text-2xl font-semibold text-gray-900 dark:text-white">12</div>
+                            <div class="ml-2 flex items-baseline text-sm font-semibold text-yellow-600 dark:text-yellow-400">
+                                <i class="fas fa-exclamation-circle"></i>
+                                Reabastecer
+                            </div>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <div class="bg-gray-50 dark:bg-gray-700 px-5 py-3">
+            <div class="text-sm">
+                <a href="#" class="font-medium text-blue-600 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300">
+                    Ver inventario bajo
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Reporte de Ganancias -->
+    <div class="bg-white dark:bg-gray-800 rounded-lg shadow overflow-hidden cursor-pointer hover:shadow-lg transition-shadow duration-300" data-report="profit">
+        <div class="p-5">
+            <div class="flex items-center">
+                <div class="flex-shrink-0 bg-purple-500 rounded-md p-3">
+                    <i class="fas fa-chart-line text-white text-xl"></i>
+                </div>
+                <div class="ml-5 w-0 flex-1">
+                    <dl>
+                        <dt class="text-sm font-medium text-gray-500 dark:text-gray-400 truncate">Ganancias del Mes</dt>
+                        <dd class="flex items-baseline">
+                            <div class="text-2xl font-semibold text-gray-900 dark:text-white">$45,280.00</div>
+                            <div class="ml-2 flex items-baseline text-sm font-semibold text-green-600 dark:text-green-400">
+                                <i class="fas fa-arrow-up"></i>
+                                8.2%
+                            </div>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <div class="bg-gray-50 dark:bg-gray-700 px-5 py-3">
+            <div class="text-sm">
+                <a href="#" class="font-medium text-blue-600 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300">
+                    Ver informe financiero
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Gráficos y Visualizaciones -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+    <!-- Gráfico de Ventas -->
+    <div class="bg-white dark:bg-gray-800 shadow rounded-lg p-6">
+        <div class="flex items-center justify-between mb-4">
+            <h3 class="text-lg font-medium text-gray-900 dark:text-white">Ventas de la Semana</h3>
+            <div class="relative">
+                <select class="appearance-none bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 py-1 px-3 pr-8 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <option>Esta Semana</option>
+                    <option>Semana Pasada</option>
+                    <option>Últimos 30 Días</option>
+                </select>
+                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700 dark:text-gray-300">
+                    <i class="fas fa-chevron-down text-xs"></i>
+                </div>
+            </div>
+        </div>
+        <div class="h-64 flex items-center justify-center bg-gray-50 dark:bg-gray-700 rounded">
+            <p class="text-gray-500 dark:text-gray-400">Gráfico de ventas semanales</p>
+        </div>
+        <div class="mt-4 grid grid-cols-7 gap-1 text-center text-xs text-gray-500 dark:text-gray-400">
+            <div>Lun</div>
+            <div>Mar</div>
+            <div>Mié</div>
+            <div>Jue</div>
+            <div>Vie</div>
+            <div>Sáb</div>
+            <div>Dom</div>
+        </div>
+    </div>
+    
+    <!-- Gráfico de Productos Populares -->
+    <div class="bg-white dark:bg-gray-800 shadow rounded-lg p-6">
+        <div class="flex items-center justify-between mb-4">
+            <h3 class="text-lg font-medium text-gray-900 dark:text-white">Productos Más Vendidos</h3>
+            <div class="relative">
+                <select class="appearance-none bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 py-1 px-3 pr-8 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <option>Este Mes</option>
+                    <option>Mes Pasado</option>
+                    <option>Últimos 3 Meses</option>
+                </select>
+                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700 dark:text-gray-300">
+                    <i class="fas fa-chevron-down text-xs"></i>
+                </div>
+            </div>
+        </div>
+        <div class="space-y-3">
+            <!-- Producto 1 -->
+            <div>
+                <div class="flex items-center justify-between text-sm mb-1">
+                    <span class="text-gray-700 dark:text-gray-300">1. Hamburguesa Especial</span>
+                    <span class="font-medium">128 ventas</span>
+                </div>
+                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                    <div class="bg-blue-600 h-2 rounded-full" style="width: 95%"></div>
+                </div>
+            </div>
+            <!-- Producto 2 -->
+            <div>
+                <div class="flex items-center justify-between text-sm mb-1">
+                    <span class="text-gray-700 dark:text-gray-300">2. Pizza Familiar</span>
+                    <span class="font-medium">98 ventas</span>
+                </div>
+                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                    <div class="bg-green-500 h-2 rounded-full" style="width: 85%"></div>
+                </div>
+            </div>
+            <!-- Producto 3 -->
+            <div>
+                <div class="flex items-center justify-between text-sm mb-1">
+                    <span class="text-gray-700 dark:text-gray-300">3. Ensalada César</span>
+                    <span class="font-medium">76 ventas</span>
+                </div>
+                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                    <div class="bg-yellow-500 h-2 rounded-full" style="width: 70%"></div>
+                </div>
+            </div>
+            <!-- Producto 4 -->
+            <div>
+                <div class="flex items-center justify-between text-sm mb-1">
+                    <span class="text-gray-700 dark:text-gray-300">4. Refresco Grande</span>
+                    <span class="font-medium">65 ventas</span>
+                </div>
+                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                    <div class="bg-red-500 h-2 rounded-full" style="width: 60%"></div>
+                </div>
+            </div>
+            <!-- Producto 5 -->
+            <div>
+                <div class="flex items-center justify-between text-sm mb-1">
+                    <span class="text-gray-700 dark:text-gray-300">5. Postre de la Casa</span>
+                    <span class="font-medium">52 ventas</span>
+                </div>
+                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                    <div class="bg-purple-500 h-2 rounded-full" style="width: 50%"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Reportes Recientes -->
+<div class="bg-white dark:bg-gray-800 shadow overflow-hidden sm:rounded-lg">
+    <div class="px-4 py-5 sm:px-6 border-b border-gray-200 dark:border-gray-700">
+        <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-white">Reportes Recientes</h3>
+        <p class="mt-1 max-w-2xl text-sm text-gray-500 dark:text-gray-400">Lista de reportes generados recientemente</p>
+    </div>
+    <div class="overflow-x-auto">
+        <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+            <thead class="bg-gray-50 dark:bg-gray-700">
+                <tr>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
+                        Nombre del Reporte
+                    </th>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
+                        Tipo
+                    </th>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
+                        Período
+                    </th>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
+                        Generado por
+                    </th>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
+                        Fecha
+                    </th>
+                    <th scope="col" class="relative px-6 py-3">
+                        <span class="sr-only">Acciones</span>
+                    </th>
+                </tr>
+            </thead>
+            <tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
+                <!-- Reporte 1 -->
+                <tr class="hover:bg-gray-50 dark:hover:bg-gray-700">
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <div class="text-sm font-medium text-gray-900 dark:text-white">Ventas Diarias</div>
+                        <div class="text-sm text-gray-500 dark:text-gray-400">15 de Agosto 2023</div>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
+                            Ventas
+                        </span>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
+                        15/08/2023
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
+                        Admin Principal
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
+                        Hoy, 10:30 AM
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                        <a href="#" class="text-blue-600 hover:text-blue-900 dark:text-blue-400 dark:hover:text-blue-300 mr-3">
+                            <i class="far fa-eye"></i> Ver
+                        </a>
+                        <a href="#" class="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300">
+                            <i class="fas fa-download"></i> Descargar
+                        </a>
+                    </td>
+                </tr>
+                <!-- Más reportes... -->
+            </tbody>
+        </table>
+    </div>
+    <!-- Pie de tabla -->
+    <div class="bg-white dark:bg-gray-800 px-4 py-3 flex items-center justify-between border-t border-gray-200 dark:border-gray-700 sm:px-6">
+        <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
+            <div>
+                <p class="text-sm text-gray-700 dark:text-gray-300">
+                    Mostrando <span class="font-medium">1</span> a <span class="font-medium">5</span> de <span class="font-medium">24</span> reportes
+                </p>
+            </div>
+            <div>
+                <nav class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
+                    <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white dark:bg-gray-700 text-sm font-medium text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-600">
+                        <span class="sr-only">Anterior</span>
+                        <i class="fas fa-chevron-left h-5 w-5"></i>
+                    </a>
+                    <a href="#" aria-current="page" class="z-10 bg-blue-50 border-blue-500 text-blue-600 dark:bg-blue-900 dark:text-blue-200 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
+                        1
+                    </a>
+                    <a href="#" class="bg-white dark:bg-gray-700 border-gray-300 text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-600 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
+                        2
+                    </a>
+                    <a href="#" class="bg-white dark:bg-gray-700 border-gray-300 text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-600 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
+                        3
+                    </a>
+                    <span class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white dark:bg-gray-700 text-sm font-medium text-gray-700 dark:text-gray-300">
+                        ...
+                    </span>
+                    <a href="#" class="bg-white dark:bg-gray-700 border-gray-300 text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-600 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
+                        5
+                    </a>
+                    <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white dark:bg-gray-700 text-sm font-medium text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-600">
+                        <span class="sr-only">Siguiente</span>
+                        <i class="fas fa-chevron-right h-5 w-5"></i>
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Script para el módulo de reportes -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Cambiar filtros adicionales según el tipo de reporte
+    const reportType = document.getElementById('reportType');
+    const additionalFilters = document.getElementById('additionalFilters');
+    
+    reportType.addEventListener('change', function() {
+        if (this.value) {
+            additionalFilters.classList.remove('hidden');
+            // Aquí iría la lógica para cargar filtros adicionales según el tipo de reporte
+        } else {
+            additionalFilters.classList.add('hidden');
+        }
+    });
+    
+    // Generar reporte
+    document.getElementById('generateReport').addEventListener('click', function() {
+        const selectedReport = reportType.value;
+        if (!selectedReport) {
+            alert('Por favor seleccione un tipo de reporte');
+            return;
+        }
+        // Aquí iría la lógica para generar el reporte
+        alert(`Generando reporte: ${selectedReport}`);
+    });
+    
+    // Aplicar filtros
+    document.getElementById('applyFilters').addEventListener('click', function() {
+        const startDate = document.getElementById('startDate').value;
+        const endDate = document.getElementById('endDate').value;
+        
+        if (!startDate || !endDate) {
+            alert('Por favor seleccione un rango de fechas');
+            return;
+        }
+        
+        if (new Date(startDate) > new Date(endDate)) {
+            alert('La fecha de inicio no puede ser mayor a la fecha fin');
+            return;
+        }
+        
+        // Aquí iría la lógica para aplicar los filtros
+        console.log('Filtros aplicados:', { startDate, endDate });
+    });
+    
+    // Hacer clic en tarjetas de reportes frecuentes
+    document.querySelectorAll('[data-report]').forEach(card => {
+        card.addEventListener('click', function() {
+            const reportType = this.getAttribute('data-report');
+            document.getElementById('reportType').value = reportType;
+            // Simular cambio para cargar filtros adicionales
+            const event = new Event('change');
+            reportType.dispatchEvent(event);
+            // Desplazarse al formulario
+            document.getElementById('additionalFilters').scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+});
+</script>

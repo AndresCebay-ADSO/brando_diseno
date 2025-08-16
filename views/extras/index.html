@@ -1,0 +1,302 @@
+<div class="container mx-auto px-4 py-6">
+    <!-- Header -->
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
+        <div>
+            <h1 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white">Módulo de Extras</h1>
+            <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">Herramientas adicionales y utilidades</p>
+        </div>
+        <div class="mt-4 md:mt-0">
+            <div class="relative">
+                <input type="text" placeholder="Buscar herramientas..." class="pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:text-white">
+                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <i class="fas fa-search text-gray-400"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Herramientas Destacadas -->
+    <div class="mb-10">
+        <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Herramientas Destacadas</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Calculadora de Costos -->
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm overflow-hidden border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow duration-300">
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="p-3 rounded-lg bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400">
+                            <i class="fas fa-calculator text-xl"></i>
+                        </div>
+                        <span class="px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400">Popular</span>
+                    </div>
+                    <h3 class="text-lg font-medium text-gray-900 dark:text-white mb-2">Calculadora de Costos</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Calcula el costo de tus platillos y determina precios de venta con márgenes personalizables.</p>
+                    <button class="w-full px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-200 flex items-center justify-center">
+                        <i class="fas fa-play-circle mr-2"></i>
+                        Abrir Herramienta
+                    </button>
+                </div>
+            </div>
+
+            <!-- Generador de Códigos QR -->
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm overflow-hidden border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow duration-300">
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="p-3 rounded-lg bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400">
+                            <i class="fas fa-qrcode text-xl"></i>
+                        </div>
+                        <span class="px-2 py-1 text-xs font-medium rounded-full bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400">Nuevo</span>
+                    </div>
+                    <h3 class="text-lg font-medium text-gray-900 dark:text-white mb-2">Generador de Códigos QR</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Crea códigos QR personalizados para tus mesas, menús digitales o promociones especiales.</p>
+                    <button class="w-full px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors duration-200 flex items-center justify-center">
+                        <i class="fas fa-play-circle mr-2"></i>
+                        Abrir Herramienta
+                    </button>
+                </div>
+            </div>
+
+            <!-- Planificador de Horarios -->
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm overflow-hidden border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow duration-300">
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="p-3 rounded-lg bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400">
+                            <i class="fas fa-calendar-alt text-xl"></i>
+                        </div>
+                        <span class="px-2 py-1 text-xs font-medium rounded-full bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-400">Destacado</span>
+                    </div>
+                    <h3 class="text-lg font-medium text-gray-900 dark:text-white mb-2">Planificador de Horarios</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Organiza los turnos de tu personal y optimiza la cobertura de tu restaurante.</p>
+                    <button class="w-full px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition-colors duration-200 flex items-center justify-center">
+                        <i class="fas fa-play-circle mr-2"></i>
+                        Abrir Herramienta
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Todas las Herramientas -->
+    <div>
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6">
+            <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-4 sm:mb-0">Todas las Herramientas</h2>
+            <div class="flex space-x-2">
+                <button class="px-3 py-1.5 text-sm font-medium rounded-lg border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:bg-gray-600">
+                    <i class="fas fa-th-large mr-1"></i> Cuadrícula
+                </button>
+                <button class="px-3 py-1.5 text-sm font-medium rounded-lg border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:bg-gray-600">
+                    <i class="fas fa-list mr-1"></i> Lista
+                </button>
+                <div class="relative">
+                    <select class="appearance-none pl-3 pr-8 py-1.5 text-sm rounded-lg border border-gray-300 bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                        <option>Todas las categorías</option>
+                        <option>Finanzas</option>
+                        <option>Marketing</option>
+                        <option>Operaciones</option>
+                        <option>Recursos Humanos</option>
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700 dark:text-gray-300">
+                        <i class="fas fa-chevron-down text-xs"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Herramienta 1 -->
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm overflow-hidden border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow duration-300">
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="p-3 rounded-lg bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400">
+                            <i class="fas fa-percentage text-xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-medium text-gray-900 dark:text-white mb-2">Calculadora de Propinas</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Calcula propinas de manera rápida y justa para tus clientes.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300">
+                            <i class="fas fa-tag mr-1"></i> Finanzas
+                        </span>
+                        <button class="text-primary-600 hover:text-primary-800 dark:text-primary-400 dark:hover:text-primary-300 text-sm font-medium">
+                            Abrir <i class="fas fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Herramienta 2 -->
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm overflow-hidden border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow duration-300">
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="p-3 rounded-lg bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400">
+                            <i class="fas fa-utensils text-xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-medium text-gray-900 dark:text-white mb-2">Creador de Menús</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Diseña menús atractivos para tu restaurante con plantillas personalizables.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300">
+                            <i class="fas fa-tag mr-1"></i> Marketing
+                        </span>
+                        <button class="text-primary-600 hover:text-primary-800 dark:text-primary-400 dark:hover:text-primary-300 text-sm font-medium">
+                            Abrir <i class="fas fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Herramienta 3 -->
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm overflow-hidden border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow duration-300">
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="p-3 rounded-lg bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400">
+                            <i class="fas fa-chart-pie text-xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-medium text-gray-900 dark:text-white mb-2">Análisis de Ventas</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Visualiza tendencias y patrones en las ventas de tu restaurante.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300">
+                            <i class="fas fa-tag mr-1"></i> Análisis
+                        </span>
+                        <button class="text-primary-600 hover:text-primary-800 dark:text-primary-400 dark:hover:text-primary-300 text-sm font-medium">
+                            Abrir <i class="fas fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Herramienta 4 -->
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm overflow-hidden border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow duration-300">
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="p-3 rounded-lg bg-pink-100 dark:bg-pink-900/30 text-pink-600 dark:text-pink-400">
+                            <i class="fas fa-envelope-open-text text-xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-medium text-gray-900 dark:text-white mb-2">Plantillas de Correos</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Plantillas profesionales para comunicación con clientes y proveedores.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300">
+                            <i class="fas fa-tag mr-1"></i> Comunicación
+                        </span>
+                        <button class="text-primary-600 hover:text-primary-800 dark:text-primary-400 dark:hover:text-primary-300 text-sm font-medium">
+                            Abrir <i class="fas fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Herramienta 5 -->
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm overflow-hidden border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow duration-300">
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="p-3 rounded-lg bg-teal-100 dark:bg-teal-900/30 text-teal-600 dark:text-teal-400">
+                            <i class="fas fa-clipboard-list text-xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-medium text-gray-900 dark:text-white mb-2">Lista de Verificación de Apertura/Cierre</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Listas personalizables para asegurar procesos consistentes.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300">
+                            <i class="fas fa-tag mr-1"></i> Operaciones
+                        </span>
+                        <button class="text-primary-600 hover:text-primary-800 dark:text-primary-400 dark:hover:text-primary-300 text-sm font-medium">
+                            Abrir <i class="fas fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Herramienta 6 -->
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm overflow-hidden border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow duration-300">
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="p-3 rounded-lg bg-cyan-100 dark:bg-cyan-900/30 text-cyan-600 dark:text-cyan-400">
+                            <i class="fas fa-bullhorn text-xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-medium text-gray-900 dark:text-white mb-2">Generador de Promociones</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Crea promociones atractivas para aumentar las ventas.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300">
+                            <i class="fas fa-tag mr-1"></i> Marketing
+                        </span>
+                        <button class="text-primary-600 hover:text-primary-800 dark:text-primary-400 dark:hover:text-primary-300 text-sm font-medium">
+                            Abrir <i class="fas fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección de Recursos Adicionales -->
+    <div class="mt-12 bg-gray-50 dark:bg-gray-800/50 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+        <div class="text-center">
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">¿Neitas algo más?</h2>
+            <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-6">Explora nuestra biblioteca de recursos para dueños de restaurantes, incluyendo guías, plantillas y consejos para hacer crecer tu negocio.</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <button class="px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-lg font-medium flex items-center">
+                    <i class="fas fa-book-open mr-2"></i> Ver Guías
+                </button>
+                <button class="px-6 py-3 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg font-medium flex items-center">
+                    <i class="fas fa-file-alt mr-2"></i> Plantillas
+                </button>
+                <button class="px-6 py-3 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg font-medium flex items-center">
+                    <i class="fas fa-video mr-2"></i> Tutoriales
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Script para el módulo de extras -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Inicializar tooltips
+    const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
+    
+    // Efecto hover en las tarjetas de herramientas
+    const toolCards = document.querySelectorAll('.hover\:shadow-md');
+    toolCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-4px)';
+            this.style.transition = 'all 0.3s ease';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+        });
+    });
+    
+    // Manejar la búsqueda de herramientas
+    const searchInput = document.querySelector('input[type="text"]');
+    if (searchInput) {
+        searchInput.addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const tools = document.querySelectorAll('[data-tool-name]');
+            
+            tools.forEach(tool => {
+                const toolName = tool.getAttribute('data-tool-name').toLowerCase();
+                if (toolName.includes(searchTerm)) {
+                    tool.style.display = 'block';
+                } else {
+                    tool.style.display = 'none';
+                }
+            });
+        });
+    }
+    
+    // Mostrar notificación al hacer clic en los botones de acción
+    const actionButtons = document.querySelectorAll('button:not([type="button"]):not([type="submit"]):not([type="reset"])');
+    actionButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Aquí iría la lógica para abrir cada herramienta
+            console.log('Abriendo herramienta...');
+        });
+    });
+});
+</script>
